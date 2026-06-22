@@ -8,6 +8,9 @@ Open an Internet Archive book, set the page view to single mode, and hit the OCR
 
 Internet Archive OCR is also notoriously inaccurate, especially for documents not in English, older documents, or documents with poor scans. Gemini OCR is noticeably better, so even for English documents you will see better raw text than if you simply copy the Internet Archive text.
 
+![screenshot](assets/InternetArchiveTranslator.png)
+*Screenshot showing translation of a passage by Gerald of Wales describing the discovery of the burial of King Arthur*
+
 ## How it works
 
 The extension is powered by Google Gemini. You will need a (free!) Google API key.
