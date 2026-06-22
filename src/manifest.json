@@ -10,8 +10,7 @@
   ],
   "host_permissions": [
     "https://archive.org/*",
-    "https://*.archive.org/*",
-    "https://generativelanguage.googleapis.com/*"
+    "https://*.archive.org/*"
   ],
   "action": {
     "default_title": "Bookxlate: OCR & Translate this page"
