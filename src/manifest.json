@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Archive.org Book OCR & Translator",
   "version": "1.1.0",
-  "description": "Capture the current page of an Internet Archive book reader, OCR it with Gemini, and view the translation, original text, and commentary in a resizable sidebar that pushes the page content aside.",
+  "description": "OCR the current page of an Internet Archive book with Gemini and translate it.",
   "permissions": [
     "activeTab",
     "storage",
