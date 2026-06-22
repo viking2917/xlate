@@ -9,7 +9,7 @@
 
 .text-font {
   font-family: var(--text-font);
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 #ia-translator-trigger {
