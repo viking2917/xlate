@@ -36,7 +36,7 @@
   sidebar.innerHTML = `
     <div id="ia-translator-resize-handle" title="Drag to resize"></div>
     <div id="ia-translator-header">
-      <span id="ia-translator-title">Page OCR &amp; Translation</span>
+      <span id="ia-translator-title">Bookxlate OCR &amp; Translation</span>
       <div id="ia-translator-header-btns">
         <button id="ia-translator-trigger-2" title="Capture and Translate">📄</button>
         <button id="ia-translator-settings" title="Settings">⚙</button>

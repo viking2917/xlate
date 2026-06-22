@@ -1,4 +1,4 @@
-# Internet Archive OCR + Translate
+# Bookxlate: Internet Archive OCR + Translate
 A chrome extension for translating books in the Internet Archive. 
 
 ## Read books in any language

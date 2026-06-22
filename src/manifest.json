@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Archive.org Book OCR & Translator",
+  "name": "Bookxlate: Archive.org Book OCR & Translator",
   "version": "1.1.0",
   "description": "OCR the current page of an Internet Archive book with Gemini and translate it.",
   "permissions": [
@@ -15,7 +15,7 @@
     "https://generativelanguage.googleapis.com/*"
   ],
   "action": {
-    "default_title": "OCR & Translate this page"
+    "default_title": "Bookxlate: OCR & Translate this page"
   },
   "background": {
     "service_worker": "background.js"
