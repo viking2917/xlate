@@ -1,0 +1,42 @@
+<svg width="512" height="512" viewBox="0 0 680 680" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>OCR translation chrome extension icon</title>
+  <desc>Minimal flat square icon with open book, scan line, and arrow</desc>
+
+  <!-- Square background with rounded corners -->
+  <rect x="40" y="40" width="600" height="600" rx="120" fill="#00afff"/>
+
+  <!-- Left page -->
+  <rect x="145" y="195" width="165" height="225" rx="8" fill="#ffffff"/>
+  <!-- Right page -->
+  <rect x="370" y="195" width="165" height="225" rx="8" fill="#ffffff"/>
+  <!-- Spine -->
+  <rect x="306" y="195" width="68" height="225" fill="#00afff"/>
+
+  <!-- Lines left page -->
+  <rect x="166" y="228" width="110" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="166" y="248" width="90" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="166" y="308" width="100" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="166" y="328" width="80" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="166" y="368" width="105" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="166" y="388" width="85" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+
+  <!-- Scan highlight band -->
+  <rect x="145" y="268" width="165" height="28" fill="#ffffff" opacity="0.45"/>
+  <rect x="166" y="278" width="110" height="8" rx="4" fill="#00afff" opacity="0.85"/>
+  <line x1="145" y1="268" x2="310" y2="268" stroke="#ffffff" stroke-width="2.5"/>
+  <line x1="145" y1="296" x2="310" y2="296" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Lines right page -->
+  <rect x="391" y="228" width="110" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="248" width="90" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="268" width="105" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="288" width="80" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="308" width="100" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="328" width="90" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="368" width="105" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+  <rect x="391" y="388" width="75" height="8" rx="4" fill="#00afff" opacity="0.3"/>
+
+  <!-- Arrow: right-pointing, centered below spine -->
+  <polygon points="303,468 303,450 377,450 377,432 430,469 377,506 377,488 303,488" fill="#ffffff"/>
+
+</svg>

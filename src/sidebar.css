@@ -1,0 +1,344 @@
+/* sidebar.css — in-page trigger button + docked, resizable sidebar
+   that pushes the host page's content via margin-right on <html>. */
+:root {
+  --ion-color-primary: #00afff;
+  --ion-color-primary-tint: #25baff;
+  --ion-color-secondary: #ff3bc6;
+  --text-font: 'Georgia, serif;'
+}
+
+.text-font {
+  font-family: var(--text-font);
+  font-size: 16px;
+}
+
+#ia-translator-trigger {
+  /*position: fixed; */
+  position: absolute;
+  top: 70px;
+  right: 16px;
+  z-index: 2147483646;
+  background: #1a1a2e;
+  background: var(--ion-color-primary);
+  color: #f5f3ee;
+  border: 1px solid #3a3a5c;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+#ia-translator-trigger:hover {
+  background: #2a2a4a;
+  background: var(--ion-color-primary-tint);
+  transform: translateY(-1px);
+}
+
+#ia-translator-trigger:active {
+  transform: translateY(0);
+}
+
+#ia-translator-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* Sit just off-screen (to the right) until opened, by translating
+     fully out rather than using a negative right offset — this keeps
+     width changes (during resize) from affecting the closed position. */
+  transform: translateX(100%);
+  width: 380px;
+  min-width: 280px;
+  max-width: 80vw;
+  height: 100vh;
+  background: #faf9f6;
+  border-left: 1px solid #ddd;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+#ia-translator-sidebar.ia-translator-open {
+  transform: translateX(0);
+}
+
+#ia-translator-resize-handle {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 8px;
+  height: 100%;
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+#ia-translator-resize-handle:hover,
+#ia-translator-resize-handle:active {
+  background: rgba(26, 26, 46, 0.15);
+}
+
+#ia-translator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1a1a2e;
+  background: var(--ion-color-primary);
+  color: #f5f3ee;
+  flex-shrink: 0;
+}
+
+#ia-translator-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#ia-translator-header-btns button {
+  background: transparent;
+  border: none;
+  color: #f5f3ee;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  opacity: 0.85;
+}
+
+#ia-translator-header-btns button:hover {
+  opacity: 1;
+}
+
+#ia-translator-body {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+#ia-translator-status {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.ia-translator-empty {
+  background: #f0eee8;
+  color: #555;
+}
+
+.ia-translator-loading {
+  background: #eef3fb;
+  color: #1d4f91;
+}
+
+.ia-translator-error {
+  background: #fbeaea;
+  color: #92201f;
+}
+
+#ia-translator-status-action {
+  margin-top: 8px;
+  background: #92201f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#ia-translator-status-action:hover {
+  background: #b32a28;
+}
+
+#ia-translator-detected-lang {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #777;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.ia-translator-collapsible {
+  margin-bottom: 14px;
+  border: 1px solid #e5e2da;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.ia-translator-collapsible summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #1a1a2e;
+  font-weight: 700;
+  padding: 9px 12px;
+  background: #f0eee8;
+  user-select: none;
+  position: relative;
+  padding-right: 26px;
+}
+
+.ia-translator-collapsible summary::-webkit-details-marker {
+  display: none;
+}
+
+.ia-translator-collapsible summary::after {
+  content: '▸';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: #888;
+  transition: transform 0.15s ease;
+}
+
+.ia-translator-collapsible[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.ia-translator-collapsible summary:hover {
+  background: #e8e5dc;
+}
+
+#ia-translator-section-original .ia-translator-text {
+  font-style: italic;
+  color: #444;
+}
+
+#ia-translator-section-commentary summary {
+  background: #eef3eb;
+  color: #2e4d2a;
+}
+
+#ia-translator-section-commentary summary:hover {
+  background: #e2ead0;
+}
+
+#ia-translator-section-commentary .ia-translator-text {
+  color: #33402f;
+}
+
+.ia-translator-text {
+  white-space: pre-wrap;
+  font-size: 13.5px;
+  color: #2a2a2a;
+  background: #fff;
+  padding: 10px 12px;
+  border-top: 1px solid #e5e2da;
+}
+
+#ia-translator-add-btn {
+  width: 100%;
+  background: #1a1a2e;
+  color: #f5f3ee;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+#ia-translator-add-btn:hover {
+  background: #2a2a4a;
+}
+
+#ia-translator-add-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#ia-translator-collection-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-top: 1px solid #ddd;
+  background: #f0eee8;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #444;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#ia-translator-collection-btns button {
+  background: transparent;
+  border: 1px solid #c9c5b8;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11.5px;
+  cursor: pointer;
+  margin-left: 6px;
+  color: #333;
+}
+
+#ia-translator-collection-btns button:hover {
+  background: #e5e2da;
+}
+
+#ia-translator-collection-panel {
+  max-height: 240px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  flex-shrink: 0;
+  padding: 8px 16px;
+}
+
+.ia-translator-empty-collection {
+  color: #888;
+  font-size: 12.5px;
+  padding: 8px 0;
+}
+
+.ia-translator-collection-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ia-translator-collection-item:last-child {
+  border-bottom: none;
+}
+
+.ia-translator-collection-item-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+}
+
+.ia-translator-collection-item-lang {
+  color: #888;
+  font-size: 11px;
+  flex: 1;
+}
+
+.ia-translator-remove-item {
+  background: transparent;
+  border: none;
+  color: #b33;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+.ia-translator-collection-item-snippet {
+  font-size: 12px;
+  color: #666;
+  margin-top: 3px;
+}
