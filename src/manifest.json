@@ -9,7 +9,6 @@
     "scripting"
   ],
   "host_permissions": [
-    "<all_urls>",  
     "https://archive.org/*",
     "https://*.archive.org/*",
     "https://generativelanguage.googleapis.com/*"

@@ -14,21 +14,6 @@
   const MIN_WIDTH = 280;
   const MAX_WIDTH_RATIO = 0.7; // never push the page content narrower than 30% of viewport
 
-  // ---------- Build floating trigger button ----------
-  const triggerBtn = document.createElement('button');
-  triggerBtn.id = 'ia-translator-trigger';
-  triggerBtn.textContent = 'OCR + Translate';
-  triggerBtn.title = 'Capture this page and send it to Gemini for OCR + translation';
-  
-  let body = document.querySelector('body');
-  // ensure body is positioned so injected elements can be placed relative to it
-  try {
-    body.style.position = body.style.position || 'relative';
-  } catch (e) {
-    // ignore if body not writable for some reason
-  }
-  // document.documentElement.appendChild(triggerBtn);
-  body.appendChild(triggerBtn);
 
   // ---------- Build sidebar ----------
   const sidebar = document.createElement('div');
@@ -97,6 +82,28 @@
 
   let lastResult = null;
 
+  function injectTriggerButton() {
+    // ---------- Build floating trigger button ----------
+    const triggerBtn = document.createElement('button');
+    triggerBtn.id = 'ia-translator-trigger';
+    triggerBtn.textContent = 'OCR + Translate';
+    triggerBtn.title = 'Capture this page and send it to Gemini for OCR + translation';
+
+    let body = document.querySelector('body');
+    // ensure body is positioned so injected elements can be placed relative to it
+    try {
+      body.style.position = body.style.position || 'relative';
+    } catch (e) {
+      // ignore if body not writable for some reason
+    }
+
+    triggerBtn.addEventListener('click', runCapture);
+  
+    // document.documentElement.appendChild(triggerBtn);
+    body.appendChild(triggerBtn);
+
+  }
+  
   function setStatus(msg, isError) {
     statusEl.textContent = msg;
     statusEl.style.display = 'block';
@@ -294,7 +301,6 @@
     );
   }
 
-  triggerBtn.addEventListener('click', runCapture);
   triggerBtn2.addEventListener('click', runCapture);
 
   addBtn.addEventListener('click', async () => {
@@ -526,6 +532,13 @@
 
   // Listen for background telling us processing state (for long requests)
   chrome.runtime.onMessage.addListener((msg) => {
+
+    // inject button if not already
+    let btn = document.querySelector('ia-translator-trigger');
+    if(!btn) {
+      injectTriggerButton();
+    }
+
     if (msg.type === 'PROCESSING_STATUS') {
       setStatus(msg.message);
     }
