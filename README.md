@@ -29,4 +29,4 @@ This extension is mostly coded by Claude AI. I've reviewed the code, but *caveat
 
 You should be able to install this from the Chrome Web Store. If you want to run it via a local install, zip up everything in the "src" directory, and load it as an unpacked extension (e.g. follow these instructions: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world)
 
-To package for submission: 'cd www;zip -r ../extension.zip .'
+To package for submission: 'rm src/.DS_Store; rm src/icons/.DS_Store; cd src;zip -r ../extension.zip .'
