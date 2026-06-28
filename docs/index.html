@@ -20,7 +20,7 @@
         padding-bottom: 10px;
       }
     
-      h2 {
+      h3 {
         margin-top: 2em;
       }
     
@@ -44,6 +44,7 @@
 
 <p>
 <b>Bookxlate</b> is a Chrome extension that allows users to perform OCR on pages from Internet Archive books and translate the extracted text using Google's Gemini API.
+It is a product of <a href="https://www.thehawaiiproject.com/faq">The Hawaii Project, LLC</a>.
 </p>
 
 <h2>Information Processed</h2>
@@ -61,7 +62,66 @@
 The extension processes only the content necessary to provide OCR and translation functionality.
 </p>
 
-<h2>Third-Party Services</h2>
+<h2>User Data collection, handling, storage and sharing</h2>
+
+
+<h3>Data Storage</h3>
+
+<p>This extension requires the user to provide a Gemini API key. 
+   This API key used solely to authenticate requests to Google's Gemini API. 
+   It is stored in local storage in the browser, and only transmitted to the Google Gemini API,
+   and only for the purpose of requesting OCR/translation of the viewed page. 
+</p>
+
+<p>No other personally identifiable user data is collected or stored.</p>
+
+<p>
+The extension may store user app preferences, settings, and API configuration information using Chrome's storage APIs. These are not personally identifiable data. 
+They are not transmitted to any other location or service.
+</p>
+
+<h3>Data Sharing</h3>
+
+<p>
+The extension does not sell, rent, or share personal information with third parties except as necessary to provide OCR and translation services through Google's Gemini API.
+</p>
+
+<h3>Data Retention</h3>
+
+<p>
+The extension does not maintain its own servers and does not retain submitted book content after processing. 
+Any retention of content submitted to Google's API is governed by Google's handling of requests to the Gemini API.
+</p>
+
+<h3>Permissions</h3>
+
+<p>This extension requires the following permissions:</p>
+
+<h3>activeTab</h3>
+
+<p>
+Used to access the current tab when the user explicitly invokes the extension.
+</p>
+
+<h3>storage</h3>
+
+<p>
+Used to save user settings and preferences for the app in local storage.
+</p>
+
+<h3>Host Permissions</h3>
+
+<p>
+The extension requires access to Internet Archive pages in order to retrieve book page content and access to Google's Gemini API in order to perform OCR and translation.
+</p>
+
+<h3>Changes to This Policy</h3>
+
+<p>
+This privacy policy may be updated from time to time. Any changes will be posted on this page.
+</p>
+
+<h3>Third-Party Services</h3>
 
 <p>
 To perform OCR and translation, the extension sends page images and/or extracted text to Google's Gemini API.
@@ -71,68 +131,10 @@ To perform OCR and translation, the extension sends page images and/or extracted
 Information submitted to Gemini is subject to Google's terms and privacy practices. Users should review Google's privacy documentation for additional information.
 </p>
 
-<h2>Data Storage</h2>
+<h3>Disclaimer</h3>
 
 <p>
-The extension may store user preferences, settings, and API configuration information using Chrome's storage APIs.
-</p>
-
-<p>
-This information is stored locally in the user's browser and is used solely to support the extension's functionality.
-</p>
-
-<p>
-This extension requires a Google Gemini API key to function. The user must create their own key and input it to the extension. The key is stored locally in your browser via <code>chrome.storage.local</code> and is never sent anywhere except directly to Google's API. It is used solely to authenticate requests to Google's Gemini API.
-</p>
-
-<h2>Data Sharing</h2>
-
-<p>
-The extension does not sell, rent, or share personal information with third parties except as necessary to provide OCR and translation services through Google's Gemini API.
-</p>
-
-<h2>Data Retention</h2>
-
-<p>
-The extension does not maintain its own servers and does not intentionally retain submitted book content after processing. Any retention of submitted content is governed by Google's handling of requests to the Gemini API.
-</p>
-
-<h2>Permissions</h2>
-
-<h3>activeTab</h3>
-
-<p>
-Used to access the current tab when the user explicitly invokes the extension.
-</p>
-
-<h3>scripting</h3>
-
-<p>
-Used to execute scripts required for OCR and translation functionality within supported pages.
-</p>
-
-<h3>storage</h3>
-
-<p>
-Used to save user settings and preferences.
-</p>
-
-<h3>Host Permissions</h3>
-
-<p>
-The extension requires access to Internet Archive pages in order to retrieve book page content and access to Google's Gemini API in order to perform OCR and translation.
-</p>
-
-<h2>Changes to This Policy</h2>
-
-<p>
-This privacy policy may be updated from time to time. Any changes will be posted on this page.
-</p>
-
-<h2>Disclaimer</h2>
-
-<p>
-This extension is in no way associated with, endorsed by, or a product of the Internet Archive organization.
+This extension is in no way associated with, endorsed by, or a product of, the Internet Archive organization or Google.
 </p>
 
 </body>

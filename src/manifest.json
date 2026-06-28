@@ -5,8 +5,7 @@
   "description": "OCR the current page of an Internet Archive book with Gemini and translate it.",
   "permissions": [
     "activeTab",
-    "storage",
-    "scripting"
+    "storage"
   ],
   "host_permissions": [
     "https://archive.org/*",
