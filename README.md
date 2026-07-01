@@ -11,6 +11,8 @@ Internet Archive OCR is also notoriously inaccurate, especially for documents no
 ![screenshot](assets/InternetArchiveTranslator.png)
 *Screenshot showing translation of a passage by Gerald of Wales describing the discovery of the burial of King Arthur*
 
+A bit more detail at the [blog post](https://www.viking2917.com/translating-internet-archive-books-on-the-fly/).
+
 ## How it works
 
 The extension is powered by Google Gemini. You will need a (free!) Google API key.
